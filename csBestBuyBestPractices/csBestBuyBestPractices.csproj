@@ -157,8 +157,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DapperDepartmentRepository.cs" />
+    <Compile Include="DapperProductRepository.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="IDepartmentRepository.cs" />
+    <Compile Include="IProductRepository.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

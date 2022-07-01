@@ -32,6 +32,40 @@ namespace csBestBuyBestPractices
                 Console.WriteLine(dept.Name);
             }
 
+            //products part starts here
+           var productRepo=new DapperProductRepository(conn);
+
+            Console.WriteLine("Type a new Product name:");
+            var name=Console.ReadLine();
+            Console.WriteLine("Type a new Product price: ");
+            var price = double.Parse(Console.ReadLine());
+            Console.WriteLine("Type a new Product categoryID (1-10): ");
+            var categoryID=int.Parse(Console.ReadLine());
+
+            productRepo.CreateProduct(name, price, categoryID);
+
+            var products=productRepo.GetAllProducts();
+
+            foreach (var product in products)
+            {
+                Console.WriteLine(product.toString());
+            }
+
+            //delete a product
+
+            
+            Console.WriteLine("Type a Product ID to delete:");
+            var productIDDelete = int.Parse(Console.ReadLine());
+            
+            productRepo.DeleteProduct(productIDDelete);
+            var productsDelete = productRepo.GetAllProducts();
+            foreach(var product in productsDelete)
+            {
+                Console.WriteLine(product.toString());
+            }
+
+
+
         }
 
     }
